@@ -1,12 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+
 :root {
-    /*
-    Colors
-    */
-        --ff-oxanium: 'Oxanium', cursive;
-    
-    /*
-    Typography
-    */
+  /* Fonts */
+  --ff-DMS: 'DM Sans', sans-serif;
+  --ff-Noto: 'Noto Serif', serif;
+
+  /* Colors */
+  --primary: #539067;
+  --background: #F6F6F6;
+  --text: #272727;
+  --detail: #6F8476;
+  --secondary: #6B6B6B;
 }
 
 /*
@@ -20,7 +24,9 @@
   box-sizing: border-box;
 }
 
-li { list-style: none; }
+li {
+  list-style: none;
+}
 
 a {
   text-decoration: none;
@@ -33,9 +39,13 @@ span,
 time,
 input,
 button,
-ion-icon { display: block; }
+ion-icon {
+  display: block;
+}
 
-img { height: auto; }
+img {
+  height: auto;
+}
 
 input,
 button {
@@ -44,28 +54,107 @@ button {
   font: inherit;
 }
 
-input { width: 100%; }
+input {
+  width: 100%;
+}
 
-button { cursor: pointer; }
+button {
+  cursor: pointer;
+}
 
-ion-icon { pointer-events: none; }
+ion-icon {
+  pointer-events: none;
+}
 
-address { font-style: normal; }
+address {
+  font-style: normal;
+}
 
 html {
-  font-family: var(--ff-poppins);
   font-size: 10px;
   scroll-behavior: smooth;
 }
 
 body {
-  background-color: var(--raisin-black-3);
+  background-color: var(--background);
   font-size: 1.6rem;
   line-height: 1.5;
 }
 
-:focus-visible { outline-offset: 4px; }
+:focus-visible {
+  outline-offset: 4px;
+}
 
 ion-icon {
   font-size: 64px;
+}
+
+/*
+HEADER
+*/
+
+.header {
+  width: 100%;
+  padding: 1.5rem 2rem;
+
+  display: flex;
+  justify-content: space-between;
+
+  position: fixed;
+}
+
+header .logo {
+  background-color: var(--primary);
+  width: 150px;
+  height: 50px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+header .logo img {
+  width: 60px;
+}
+
+.nav {
+  display: flex;
+  gap: 20px;
+  background-color: var(--primary);
+  height: 50px;
+  padding-inline: 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav .navItem {
+  font-family: var(--ff-DMS);
+  color: var(--background);
+  width: 40%;
+  font: 1em sans-serif;
+  text-align: center;
+}
+
+.nav:last-child {
+  border-radius: 20px 5px 20px 5px;
+}
+
+.hero {
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    height: auto;
+    padding-block: 2rem;
+  }
+
+  .nav .navItem {
+    width: 100%;
+  }
 }
