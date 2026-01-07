@@ -93,13 +93,17 @@ h1,
 h2,
 h3 {
   font-family: var(--ff-DMS);
-    font-size: clamp(1.5rem, 3vw, 3.5rem);
+  font-size: clamp(1.5rem, 3vw, 3.5rem);
 }
 
 p {
   font-family: var(--ff-Noto);
   font-size: clamp(1rem, 2vw, 2.5rem);
 
+}
+
+.section {
+  padding: 8rem 2rem 4rem 2rem;
 }
 
 /*
@@ -173,7 +177,8 @@ header .logo img {
   text-align: center;
   padding: 10px 20px;
   border-radius: 10px;
-  margin: 20px;
+  flex-direction: column;
+  gap: clamp(0.5rem, 2vw, 2rem);
 }
 
 .heroCard h1 {
@@ -183,7 +188,6 @@ header .logo img {
 }
 
 .presentation {
-  margin: 20px;
   display: grid;
   grid-template-columns: 6fr 4fr;
   align-items: stretch;
@@ -202,25 +206,41 @@ header .logo img {
 .textArea {
   display: flex;
   flex-direction: column;
-      height: auto; /* agora a altura é só do conteúdo */
+  height: auto;
+  gap: 10px;
+  /* agora a altura é só do conteúdo */
 }
 
 .buttonArea {
-    margin-top: auto; /* espaçamento normal */
+  margin-top: auto;
+
+  /* espaçamento normal */
   background-color: #539067;
-      align-self: flex-start; /* opcional */
-      width: 100%;
+  align-self: flex-start;
+  /* opcional */
+  width: 100%;
 }
 
 .buttonArea button {
   font-family: var(--ff-DMS);
   font-weight: 700;
-  padding: clamp(0.7rem, 2vw, 3rem) 10px;
+  padding: clamp(0.7rem, 1.5vw, 2.5rem) 10px;
   color: var(--background);
   width: 100%;
   text-align: left;
-
   font-size: clamp(1rem, 2vw, 3rem);
+}
+
+.services {
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.servicesTitle {
+  text-align: center;
+  margin-bottom: 4rem;
+  font-size: clamp(2rem, 4vw, 4rem);
 }
 
 @media (max-width: 768px) {
@@ -238,8 +258,25 @@ header .logo img {
     justify-content: center;
   }
 
-  .buttonArea {
-    margin-top: 10px;
+  .presentation {
+    grid-template-columns: 1fr;
   }
-}
 
+  .presentation img {
+    /* Opção 1: Ocultar para foco total no texto/botão */
+    display: none; 
+    
+    /* Opção 2: Se quiser manter, deixe-a pequena e centralizada:
+    display: block;
+    max-width: 120px;
+    margin: 0 auto;
+    */
+  }
+  
+  .buttonArea button{
+    /* No mobile, alinhamos o botão para ocupar a largura toda 
+       ou centralizar, conforme seu gosto */
+    align-self: stretch;
+  }
+
+}
