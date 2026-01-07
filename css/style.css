@@ -133,6 +133,7 @@ header .logo img {
   color: var(--background);
   width: 40%;
   font: 1em sans-serif;
+  font-weight: 500;
   text-align: center;
 }
 
@@ -141,10 +142,13 @@ header .logo img {
 }
 
 .hero {
+  display: flex;
   height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  justify-content: baseline;
+  align-items: center;
 }
 
 @media (max-width: 768px) {
@@ -157,4 +161,25 @@ header .logo img {
   .nav .navItem {
     width: 100%;
   }
+
+  .hero {
+  justify-content: center;
+  }
+}
+
+.heroCard {
+  background-color: #539067;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  height: 10%;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px;
+}
+
+.heroCard h1{
+  font-family: var(--ff-DMS);
+  font-weight: 600;
+  color: var(--background);
 }
