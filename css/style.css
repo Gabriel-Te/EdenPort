@@ -89,6 +89,19 @@ ion-icon {
   font-size: 64px;
 }
 
+h1,
+h2,
+h3 {
+  font-family: var(--ff-DMS);
+    font-size: clamp(1.5rem, 3vw, 3.5rem);
+}
+
+p {
+  font-family: var(--ff-Noto);
+  font-size: clamp(1rem, 2vw, 2.5rem);
+
+}
+
 /*
 HEADER
 */
@@ -151,6 +164,65 @@ header .logo img {
   align-items: center;
 }
 
+
+
+.heroCard {
+  background-color: #539067;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin: 20px;
+}
+
+.heroCard h1 {
+  font-family: var(--ff-DMS);
+  font-weight: 600;
+  color: var(--background);
+}
+
+.presentation {
+  margin: 20px;
+  display: grid;
+  grid-template-columns: 6fr 4fr;
+  align-items: stretch;
+  /* MUITO IMPORTANTE */
+  gap: clamp(0.5rem, 2vw, 2rem);
+}
+
+.presentation img {
+  width: 100%;
+}
+
+.buttonArea p {
+  display: none;
+}
+
+.textArea {
+  display: flex;
+  flex-direction: column;
+      height: auto; /* agora a altura é só do conteúdo */
+}
+
+.buttonArea {
+    margin-top: auto; /* espaçamento normal */
+  background-color: #539067;
+      align-self: flex-start; /* opcional */
+      width: 100%;
+}
+
+.buttonArea button {
+  font-family: var(--ff-DMS);
+  font-weight: 700;
+  padding: clamp(0.7rem, 2vw, 3rem) 10px;
+  color: var(--background);
+  width: 100%;
+  text-align: left;
+
+  font-size: clamp(1rem, 2vw, 3rem);
+}
+
 @media (max-width: 768px) {
   .nav {
     flex-direction: column;
@@ -163,23 +235,11 @@ header .logo img {
   }
 
   .hero {
-  justify-content: center;
+    justify-content: center;
+  }
+
+  .buttonArea {
+    margin-top: 10px;
   }
 }
 
-.heroCard {
-  background-color: #539067;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  height: 10%;
-  padding: 20px;
-  border-radius: 10px;
-  margin: 20px;
-}
-
-.heroCard h1{
-  font-family: var(--ff-DMS);
-  font-weight: 600;
-  color: var(--background);
-}
