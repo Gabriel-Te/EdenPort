@@ -166,6 +166,8 @@ header .logo img {
   background-position: center;
   justify-content: baseline;
   align-items: center;
+  padding: 0 2rem;
+  gap: clamp(1rem, 4vw, 4rem);
 }
 
 
@@ -203,6 +205,7 @@ align-self: flex-end; /* Alinha a imagem na base do grid, junto com o botão */
   max-height: 100%; /* Impede que o gráfico fique maior que o texto */
   object-fit: contain;
   object-position: bottom;
+  margin-top: 20px;
 }
 
 .buttonArea p {
@@ -213,24 +216,24 @@ align-self: flex-end; /* Alinha a imagem na base do grid, junto com o botão */
   display: flex;
   flex-direction: column;
   height: auto;
-  gap: 10px;
   /* agora a altura é só do conteúdo */
+  gap: 10px;
 }
 
 .buttonArea {
   margin-top: auto;
-
   /* espaçamento normal */
   background-color: #539067;
   align-self: flex-start;
   /* opcional */
   width: 100%;
+  border-radius: 1rem;
 }
 
 .buttonArea button {
   font-family: var(--ff-DMS);
   font-weight: 700;
-  padding: clamp(0.7rem, 1.5vw, 2.5rem) 10px;
+  padding: clamp(0.7rem, 1.5vw, 2.5rem) 20px;
   color: var(--background);
   width: 100%;
   text-align: left;
@@ -268,9 +271,6 @@ align-self: flex-end; /* Alinha a imagem na base do grid, junto com o botão */
     grid-template-columns: 1fr;
   } */
 
-  .presentation img {
-
-  }
   
   .buttonArea button{
     /* No mobile, alinhamos o botão para ocupar a largura toda 
