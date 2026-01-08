@@ -56,7 +56,7 @@
 
     <section class="section services">
         <h1 class="title servicesTitle">Nossos Serviços</h1>
-        
+
         <article class="service">
             <h1 class="title  serviceTitle">
                 Fotografia Profissional
@@ -120,7 +120,45 @@
         </div>
         <img src="" alt="">
     </section>
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+    <script>
+        // --- INICIALIZAÇÃO DO LENIS ---
+        const lenis = new Lenis({
+            duration: 1.2, // Duração do scroll (quanto maior, mais suave)
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Função de suavização
+            smoothWheel: true
+        });
 
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+
+
+        // --- EFEITO DO HEADER (ALPHA) ---
+        const header = document.querySelector('.header');
+
+        // Usamos o evento de scroll do próprio Lenis para melhor performance
+        lenis.on('scroll', (e) => {
+            const scrollY = window.scrollY;
+            const startFade = 50;
+            const endFade = 300;
+
+            let opacity = (scrollY - startFade) / (endFade - startFade);
+            opacity = Math.min(Math.max(opacity, 0), 1);
+
+            header.style.opacity = opacity;
+            header.style.backgroundColor = `rgba(0, 0, 0, ${opacity * 0.8})`;
+            header.style.backdropFilter = `blur(${opacity * 10}px)`;
+
+            if (opacity > 0.1) {
+                header.classList.add('active');
+            } else {
+                header.classList.remove('active');
+            }
+        });
+    </script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 

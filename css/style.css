@@ -72,7 +72,7 @@ address {
 
 html {
   font-size: 10px;
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 
 body {
@@ -103,7 +103,7 @@ p {
 }
 
 .section {
-  margin: 16rem 2rem 4rem 2rem;
+  margin: 14rem clamp(2rem, 7vw, 8rem) 4rem clamp(2rem, 6vw, 8rem);
 }
 
 /*
@@ -113,18 +113,16 @@ HEADER
 .header {
   width: 100%;
   padding: 1.5rem 2rem;
-
   display: flex;
   justify-content: space-between;
-
+  opacity: 0;
   position: fixed;
 }
 
 header .logo {
-  background-color: var(--primary);
-  width: 150px;
-  height: 50px;
-  padding: 10px;
+  /* background-color: var(--primary);
+  padding: clamp(5px, 10px, 15px); */
+  height: fit-content;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -132,15 +130,18 @@ header .logo {
 }
 
 header .logo img {
-  width: 60px;
+  width: clamp(40px, 8vw, 55px);
+  height: auto;
+  aspect-ratio: 55 / 44;
+  /* Mantém a proporção original */
+  object-fit: cover;
+
 }
 
 .nav {
   display: flex;
   gap: 20px;
-  background-color: var(--primary);
-  height: 50px;
-  padding-inline: 20px;
+  /* background-color: var(--primary); */
   align-items: center;
   justify-content: space-between;
 }
@@ -149,9 +150,16 @@ header .logo img {
   font-family: var(--ff-DMS);
   color: var(--background);
   width: 40%;
-  font: 1em sans-serif;
   font-weight: 500;
   text-align: center;
+  cursor: pointer;
+    font-size: clamp(1.1rem, 2.2vw, 2,2rem);
+}
+
+.navItem:hover {
+  color: var(--primary);
+  border-radius: 8px;
+  transition: all 0.3s ease;
 }
 
 .nav:last-child {
@@ -199,10 +207,12 @@ header .logo img {
 }
 
 .presentation img {
-align-self: flex-end; /* Alinha a imagem na base do grid, junto com o botão */
+  align-self: flex-end;
+  /* Alinha a imagem na base do grid, junto com o botão */
   width: 100%;
   height: auto;
-  max-height: 100%; /* Impede que o gráfico fique maior que o texto */
+  max-height: 100%;
+  /* Impede que o gráfico fique maior que o texto */
   object-fit: contain;
   object-position: bottom;
   margin-top: 20px;
@@ -227,13 +237,13 @@ align-self: flex-end; /* Alinha a imagem na base do grid, junto com o botão */
   align-self: flex-start;
   /* opcional */
   width: 100%;
-  border-radius: 1rem;
+  border-radius: clamp(0.7rem, 1vw, 2rem);
 }
 
 .buttonArea button {
   font-family: var(--ff-DMS);
   font-weight: 700;
-  padding: clamp(0.7rem, 1.5vw, 2.5rem) 20px;
+  padding: clamp(0.7rem, 1vw, 2.5rem) 20px;
   color: var(--background);
   width: 100%;
   text-align: left;
@@ -253,11 +263,6 @@ align-self: flex-end; /* Alinha a imagem na base do grid, junto com o botão */
 }
 
 @media (max-width: 768px) {
-  .nav {
-    flex-direction: column;
-    height: auto;
-    padding-block: 2rem;
-  }
 
   .nav .navItem {
     width: 100%;
@@ -271,11 +276,32 @@ align-self: flex-end; /* Alinha a imagem na base do grid, junto com o botão */
     grid-template-columns: 1fr;
   } */
 
-  
-  .buttonArea button{
+
+  .buttonArea button {
     /* No mobile, alinhamos o botão para ocupar a largura toda 
        ou centralizar, conforme seu gosto */
     align-self: stretch;
   }
 
+}
+
+/* 2. O Lenis recomenda essas classes para evitar bugs de renderização */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
 }
