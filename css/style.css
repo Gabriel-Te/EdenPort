@@ -103,7 +103,7 @@ p {
 }
 
 .section {
-  padding: 8rem 2rem 4rem 2rem;
+  margin: 16rem 2rem 4rem 2rem;
 }
 
 /*
@@ -187,6 +187,7 @@ header .logo img {
   color: var(--background);
 }
 
+
 .presentation {
   display: grid;
   grid-template-columns: 6fr 4fr;
@@ -196,7 +197,12 @@ header .logo img {
 }
 
 .presentation img {
+align-self: flex-end; /* Alinha a imagem na base do grid, junto com o botão */
   width: 100%;
+  height: auto;
+  max-height: 100%; /* Impede que o gráfico fique maior que o texto */
+  object-fit: contain;
+  object-position: bottom;
 }
 
 .buttonArea p {
@@ -258,19 +264,12 @@ header .logo img {
     justify-content: center;
   }
 
-  .presentation {
+  /* .presentation {
     grid-template-columns: 1fr;
-  }
+  } */
 
   .presentation img {
-    /* Opção 1: Ocultar para foco total no texto/botão */
-    display: none; 
-    
-    /* Opção 2: Se quiser manter, deixe-a pequena e centralizada:
-    display: block;
-    max-width: 120px;
-    margin: 0 auto;
-    */
+
   }
   
   .buttonArea button{
