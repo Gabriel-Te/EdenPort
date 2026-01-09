@@ -2,15 +2,15 @@
 
 :root {
   /* Fonts */
-  --ff-DMS: 'DM Sans', sans-serif;
-  --ff-Noto: 'Noto Serif', serif;
+  --ff-DMS: 'Montserrat', sans-serif;
+  --ff-Noto: 'Montserrat', sans-serif;
 
   /* Colors */
-  --primary: #539067;
+  --primary: #06400e;
   --background: #F6F6F6;
   --text: #272727;
-  --detail: #6F8476;
-  --secondary: #6B6B6B;
+  --detail: #54926a;
+  --secondary: #d9d9cc;
 }
 
 /*
@@ -89,7 +89,6 @@ ion-icon {
   font-size: 64px;
 }
 
-h1,
 h2,
 h3 {
   font-family: var(--ff-DMS);
@@ -98,156 +97,74 @@ h3 {
 
 p {
   font-family: var(--ff-Noto);
-  font-size: clamp(1rem, 2vw, 2.5rem);
+  font-size: clamp(1.5rem, 1.5vw, 2.5rem);
 
 }
 
 .section {
-  margin: 14rem clamp(2rem, 7vw, 8rem) 4rem clamp(2rem, 6vw, 8rem);
+  margin: 5rem clamp(2rem, 9vw, 8rem) 4rem clamp(2rem, 9vw, 8rem);
 }
 
 /*
 HEADER
 */
 
-.header {
-  width: 100%;
-  padding: 1.5rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  opacity: 0;
-  position: fixed;
-}
-
-header .logo {
-  /* background-color: var(--primary);
-  padding: clamp(5px, 10px, 15px); */
-  height: fit-content;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 10px;
-}
-
-header .logo img {
-  width: clamp(40px, 8vw, 55px);
-  height: auto;
-  aspect-ratio: 55 / 44;
-  /* Mantém a proporção original */
-  object-fit: cover;
-
-}
-
-.nav {
-  display: flex;
-  gap: 20px;
-  /* background-color: var(--primary); */
-  align-items: center;
-  justify-content: space-between;
-}
-
-.nav .navItem {
-  font-family: var(--ff-DMS);
-  color: var(--background);
-  width: 40%;
-  font-weight: 500;
-  text-align: center;
-  cursor: pointer;
-    font-size: clamp(1.1rem, 2.2vw, 2,2rem);
-}
-
-.navItem:hover {
-  color: var(--primary);
-  border-radius: 8px;
-  transition: all 0.3s ease;
-}
-
-.nav:last-child {
-  border-radius: 20px 5px 20px 5px;
-}
-
-.hero {
-  display: flex;
-  height: 100vh;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  justify-content: baseline;
-  align-items: center;
-  padding: 0 2rem;
-  gap: clamp(1rem, 4vw, 4rem);
-}
-
-
-
-.heroCard {
-  background-color: #539067;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  padding: 10px 20px;
-  border-radius: 10px;
-  flex-direction: column;
-  gap: clamp(0.5rem, 2vw, 2rem);
-}
-
-.heroCard h1 {
-  font-family: var(--ff-DMS);
-  font-weight: 600;
-  color: var(--background);
-}
-
 
 .presentation {
   display: grid;
-  grid-template-columns: 6fr 4fr;
-  align-items: stretch;
-  /* MUITO IMPORTANTE */
-  gap: clamp(0.5rem, 2vw, 2rem);
+  grid-template-columns: 7fr 3fr;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .presentation img {
-  align-self: flex-end;
   /* Alinha a imagem na base do grid, junto com o botão */
   width: 100%;
   height: auto;
   max-height: 100%;
   /* Impede que o gráfico fique maior que o texto */
-  object-fit: contain;
-  object-position: bottom;
-  margin-top: 20px;
 }
 
-.buttonArea p {
-  display: none;
-}
 
 .textArea {
   display: flex;
   flex-direction: column;
   height: auto;
   /* agora a altura é só do conteúdo */
-  gap: 10px;
+  gap: 20px;
+  text-align: left;
+}
+
+.textArea img {
+  align-self: flex-start;
+
+  width: clamp(8rem, 15vw, 10rem);
+  height: auto;
 }
 
 .buttonArea {
+  display: flex;
+  flex-direction: column;
   margin-top: auto;
   /* espaçamento normal */
-  background-color: #539067;
-  align-self: flex-start;
+  justify-content: flex-start;
+  background-color: var(--primary);
   /* opcional */
-  width: 100%;
-  border-radius: clamp(0.7rem, 1vw, 2rem);
+  margin-top: 30px;
+  justify-self: center;
+  align-self: flex-start;
+  padding: clamp(0.7rem, 0.8vw, 1.5rem);
+  border-radius: clamp(2rem, 5vw, 5rem);
 }
 
 .buttonArea button {
   font-family: var(--ff-DMS);
   font-weight: 700;
-  padding: clamp(0.7rem, 1vw, 2.5rem) 20px;
+  padding: clamp(0.7rem, 1vw, 2.5rem);
   color: var(--background);
   width: 100%;
-  text-align: left;
-  font-size: clamp(1rem, 2vw, 3rem);
+  height: 100%;
+  font-size: clamp(1rem, 2vw, 2rem);
 }
 
 .services {
@@ -262,6 +179,36 @@ header .logo img {
   font-size: clamp(2rem, 4vw, 4rem);
 }
 
+.data {
+  width: 100%;
+  background-color: #d9d9cc;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.data .item {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.data .item p{
+    font-weight: 500;
+    font-size: clamp(1.5rem, 1.3vw, 2.5rem);
+    color: black;
+}
+
+.data img {
+  width: clamp(5rem, 10vw, 8rem);
+  align-self: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  background-color: var(--background)
+}
+
 @media (max-width: 768px) {
 
   .nav .navItem {
@@ -272,21 +219,43 @@ header .logo img {
     justify-content: center;
   }
 
-  /* .presentation {
-    grid-template-columns: 1fr;
-  } */
-
-
-  .buttonArea button {
-    /* No mobile, alinhamos o botão para ocupar a largura toda 
-       ou centralizar, conforme seu gosto */
-    align-self: stretch;
+  .buttonArea {
+    align-self: center;
   }
 
+  .buttonArea button {
+    text-align: center;
+  }
+
+  .presentation {
+    display: flex;
+    /* MUITO IMPORTANTE */
+    gap: clamp(0.5rem, 2vw, 2rem);
+  }
+
+  .imageArea {
+    max-height: 300px;
+    margin-top: 20px;
+  }
+
+  .imageArea img {
+    height: 300px;
+    object-fit: contain;
+
+  }
+
+  .textArea img {
+    align-self: center;
+  }
+
+  .textArea {
+    text-align: center;
+  }
 }
 
 /* 2. O Lenis recomenda essas classes para evitar bugs de renderização */
-html.lenis, html.lenis body {
+html.lenis,
+html.lenis body {
   height: auto;
 }
 
