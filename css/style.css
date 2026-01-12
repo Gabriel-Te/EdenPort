@@ -102,7 +102,7 @@ p {
 }
 
 .section {
-  margin: 8rem clamp(2rem, 9vw, 8rem) 8rem clamp(2rem, 9vw, 8rem);
+  margin: 0px clamp(2rem, 9vw, 8rem);
 }
 
 body::-webkit-scrollbar {
@@ -118,6 +118,13 @@ body::-webkit-scrollbar-track {
 /*
 HEADER
 */
+
+.container {
+  margin-top: 8em;
+  display: flex;
+  flex-direction: column;
+  gap: 15em;
+}
 
 
 .presentation {
@@ -172,7 +179,6 @@ HEADER
 
 .buttonArea {
   display: flex;
-  flex-direction: column;
   margin-top: auto;
   /* espaçamento normal */
   justify-content: flex-start;
@@ -181,18 +187,27 @@ HEADER
   margin-top: 30px;
   justify-self: center;
   align-self: flex-start;
-  padding: clamp(0.7rem, 0.8vw, 1.5rem);
   border-radius: clamp(2rem, 5vw, 5rem);
 }
 
 .buttonArea button {
+  display: flex;
   font-family: var(--ff-DMS);
   font-weight: 700;
-  padding: clamp(0.7rem, 1vw, 2.5rem);
+  padding: clamp(1.6rem, 2vw, 2.2rem) 30px;
   color: var(--background);
   width: 100%;
+  gap: 15px;
   height: 100%;
-  font-size: clamp(1rem, 2vw, 2rem);
+  font-size: clamp(1.5rem, 2vw, 2rem);
+    border-radius: clamp(2rem, 5vw, 5rem);
+}
+
+.buttonArea ion-icon {
+  width:clamp(1.7rem, 2vw, 2rem);
+  height:  clamp(1.7rem, 2vw, 2rem);
+  justify-self: center;
+  align-self: center;
 }
 
 .services {
@@ -242,7 +257,7 @@ HEADER
   display: grid;
   grid-template-columns: 5fr 5fr;
   gap: clamp(2rem, 5vw, 5rem);
-  margin: 10rem clamp(2rem, 9vw, 8rem) 4rem clamp(2rem, 9vw, 8rem);
+  margin: 0px clamp(16rem, 10vw, 10rem);
 }
 
 .textArea {
@@ -268,7 +283,7 @@ HEADER
 }
 
 .stItem .img {
-  width: clamp(3rem, 10vw, 6rem);
+  width: clamp(3rem, 10vw, 5rem);
 
   height: auto;
   border-radius: clamp(2rem, 3vw, 2rem);
@@ -281,8 +296,8 @@ HEADER
   border-radius: clamp(1rem, 1vw, 2rem);
   display: flex;
   flex-direction: column;
-  gap: clamp(1rem, 2vw, 2rem);
-  background-color: #f3f3f3;
+  gap: clamp(0.6rem, 1vw, 1.6rem);
+  background-color: #e8e7e7;
 }
 
 .stItem img {
@@ -299,10 +314,10 @@ HEADER
 }
 
 .stItem h3 {
-  font-weight: 500;
+  font-weight: 600;
   color: var(--text);
   font-family: var(--ff-DMS);
-  font-size: clamp(1.6rem, 2vw, 2rem);
+  font-size: clamp(1.5rem, 1.8vw, 1.8rem);
 }
 
 
