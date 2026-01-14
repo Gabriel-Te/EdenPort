@@ -185,7 +185,7 @@ HEADER
   margin-top: auto;
   /* espaçamento normal */
   justify-content: flex-start;
-  background-color: var(--primary);
+  background-color: var(--detail);
   /* opcional */
   margin-top: 30px;
   justify-self: center;
@@ -202,14 +202,15 @@ HEADER
   width: 100%;
   gap: 15px;
   height: 100%;
-  box-shadow: 0px 2px 5px rgba(40, 40, 40, 0.393);;
+  box-shadow: 0px 2px 5px rgba(40, 40, 40, 0.393);
+  ;
   font-size: clamp(1.5rem, 2vw, 2rem);
   border-radius: clamp(2rem, 5vw, 5rem);
-  transition: all 0.2s ease-in-out;
+  transition: all 0.25s ease-in;
 }
 
 .buttonArea button:hover {
-  background-color: #54926a;
+  background-color: var(--primary);
   box-shadow: 0px 3px 5px rgba(40, 40, 40, 0.616);
   ;
 }
@@ -294,28 +295,48 @@ HEADER
   grid-template-columns: repeat(2, 1fr);
 }
 
-.stItem .img {
-  width: clamp(3rem, 10vw, 5rem);
-  height: auto;
-  border-radius: clamp(2rem, 3vw, 2rem);
-  background-color: var(--background);
-  padding: 10px;
-}
-
 .stItem {
   padding: clamp(1rem, 2vw, 2rem);
   border-radius: clamp(1rem, 1vw, 2rem);
   display: flex;
   flex-direction: column;
   gap: clamp(0.6rem, 1vw, 1.6rem);
-  background-color: #e8e7e7;
+  background-color: #f2f2f2;
+  transition: all 0.2s ease-in;
 }
 
-.stItem img {
-  width: 100%;
-  height: auto;
+.stItem:hover {
+  background-color: #54926a;
+}
+
+.stItem ion-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: clamp(0.5rem, 1.6vw, 2rem);
+  background-color: #adceb6;
+  padding: 10px;
+  transition: all 0.2s ease-in;
+}
+
+.stItem:hover h3 {
+  color: #f2f2f2;
+}
+
+
+.stItem:hover ion-icon {
+  color: #FFF;
+  background-color: #81ae8d;
+}
+
+.stItem h3 {
+  font-weight: 500;
+  color: var(--text);
+  font-family: var(--ff-DMS);
+  font-size: clamp(1.5rem, 1.8vw, 1.8rem);
+    transition: all 0.2s ease-in;
 
 }
+
 
 .strategyDescription {
   margin-left: 10px;
@@ -324,12 +345,6 @@ HEADER
   color: var(--text);
 }
 
-.stItem h3 {
-  font-weight: 600;
-  color: var(--text);
-  font-family: var(--ff-DMS);
-  font-size: clamp(1.5rem, 1.8vw, 1.8rem);
-}
 
 .manage {
   width: 100%;
@@ -374,16 +389,18 @@ HEADER
   font-size: clamp(1.5rem, 1.3vw, 1.7rem);
 }
 
-.cdItem .img {
-  width: clamp(3rem, 10vw, 5rem);
+.cdItem ion-icon {
+  width: 30px;
+  height: 30px;
   border-radius: clamp(1rem, 1vw, 2rem);
   background-color: #06400e;
+  color: #F6F6F6;
   padding: 10px;
 }
 
-.cdItem .img img {
-  width: 100%;
-  height: auto;
+.manage .buttonArea {
+  justify-self: center;
+  align-self: center;
 }
 
 
