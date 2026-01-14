@@ -35,7 +35,6 @@ a {
 
 a,
 img,
-span,
 time,
 input,
 button,
@@ -113,6 +112,10 @@ body::-webkit-scrollbar-track {
   background: var(--background);
 }
 
+span {
+  color: var(--primary);
+  white-space: nowrap;
+}
 
 
 /*
@@ -172,7 +175,7 @@ HEADER
   height: auto;
 }
 
-.imageArea{
+.imageArea {
   display: flex;
   justify-content: center;
 }
@@ -199,13 +202,21 @@ HEADER
   width: 100%;
   gap: 15px;
   height: 100%;
+  box-shadow: 0px 2px 5px rgba(40, 40, 40, 0.393);;
   font-size: clamp(1.5rem, 2vw, 2rem);
-    border-radius: clamp(2rem, 5vw, 5rem);
+  border-radius: clamp(2rem, 5vw, 5rem);
+  transition: all 0.2s ease-in-out;
+}
+
+.buttonArea button:hover {
+  background-color: #54926a;
+  box-shadow: 0px 3px 5px rgba(40, 40, 40, 0.616);
+  ;
 }
 
 .buttonArea ion-icon {
-  width:clamp(1.7rem, 2vw, 2rem);
-  height:  clamp(1.7rem, 2vw, 2rem);
+  width: clamp(1.7rem, 2vw, 2rem);
+  height: clamp(1.7rem, 2vw, 2rem);
   justify-self: center;
   align-self: center;
 }
@@ -213,7 +224,7 @@ HEADER
 .services {
   padding: 4rem 2rem;
   display: flex;
-  
+
   flex-direction: column;
 }
 
@@ -225,10 +236,11 @@ HEADER
 
 .data {
   width: 100%;
-  background-color: #d9d9cc;
+  background-color: var(--secondary);
   padding-top: 100px;
   padding-bottom: 100px;
   display: flex;
+  padding-inline: 70px;
   justify-content: space-around;
 }
 
@@ -284,11 +296,10 @@ HEADER
 
 .stItem .img {
   width: clamp(3rem, 10vw, 5rem);
-
   height: auto;
   border-radius: clamp(2rem, 3vw, 2rem);
   background-color: var(--background);
-  padding: clamp(0.5rem, 2vw, 1rem);
+  padding: 10px;
 }
 
 .stItem {
@@ -318,6 +329,61 @@ HEADER
   color: var(--text);
   font-family: var(--ff-DMS);
   font-size: clamp(1.5rem, 1.8vw, 1.8rem);
+}
+
+.manage {
+  width: 100%;
+  background-color: #e9e9e9;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  display: flex;
+  padding-inline: 50px;
+  justify-content: space-around;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.manage .textArea {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+
+.cardGrid {
+  display: flex;
+  gap: clamp(2rem, 5vw, 5rem);
+  margin-bottom: 50px;
+}
+
+.cdItem {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border-radius: clamp(2rem, 2vw, 4rem);
+}
+
+.cdItem h3 {
+  font-size: clamp(1.7rem, 4vw, 2rem);
+}
+
+.cdItem p {
+  font-size: clamp(1.5rem, 1.3vw, 1.7rem);
+}
+
+.cdItem .img {
+  width: clamp(3rem, 10vw, 5rem);
+  border-radius: clamp(1rem, 1vw, 2rem);
+  background-color: #06400e;
+  padding: 10px;
+}
+
+.cdItem .img img {
+  width: 100%;
+  height: auto;
 }
 
 
@@ -365,6 +431,11 @@ HEADER
     display: flex;
     flex-direction: column;
     grid-template-columns: 1fr 1fr;
+  }
+
+  .cardGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
