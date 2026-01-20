@@ -153,9 +153,7 @@ HEADER
 
 .presentation img {
   /* Alinha a imagem na base do grid, junto com o botão */
-  width: 100%;
-  height: auto;
-  max-height: 100%;
+  width: clamp(5rem, 30rem, 40rem);
   /* Impede que o gráfico fique maior que o texto */
 }
 
@@ -335,7 +333,6 @@ HEADER
   font-family: var(--ff-DMS);
   font-size: clamp(1.5rem, 1.8vw, 1.8rem);
   transition: all 0.2s ease-in;
-
 }
 
 
@@ -387,7 +384,8 @@ HEADER
 }
 
 .cdItem:hover {
-    transform: scale(1.01); /* Aumenta o elemento para 150% do seu tamanho original */
+  transform: scale(1.01);
+  /* Aumenta o elemento para 150% do seu tamanho original */
   box-shadow: 0px 0px 10px rgba(40, 40, 40, 0.34);
 }
 
@@ -424,11 +422,11 @@ HEADER
 }
 
 .cdItem:nth-of-type(2) {
-  border-color: hsl(55, 100%, 50%, 0.600);
+  border-color: hsla(32, 100%, 50%, 0.6);
 }
 
 .cdItem:nth-of-type(2) ion-icon {
-  background-color: hsl(55, 100%, 50%, 0.600);
+  background-color: hsl(32, 100%, 50%, 0.600);
 }
 
 .cdItem:nth-of-type(3) {
@@ -446,6 +444,55 @@ HEADER
 .cdItem:nth-of-type(4) ion-icon {
   background-color: hsl(141, 100%, 50%, 0.600);
 }
+
+.photos {
+  width: 100%;
+  background-color: var(--detail);
+  padding-top: 100px;
+  padding-bottom: 100px;
+  padding-inline: clamp(1rem, 12vw, 10rem);
+  justify-content: space-around;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 7fr 3fr;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.photos h1,
+.photos p {
+  color: #f2f2f2;
+}
+
+.photos p {
+  max-width: 60%;
+  margin-left: 10px;
+}
+
+.photos .buttonArea {
+  align-self: flex-start;
+  background-color: var(--text);
+}
+
+.photos .buttonArea button:hover {
+  background-color: #070707;
+}
+
+
+.photos .imageArea {
+  border-radius: clamp(2rem, 1vw, 2rem);
+  background-color: var(--background);
+  overflow: hidden;
+  box-shadow: 0px 0px 10px rgba(40, 40, 40, 0.74);
+
+}
+
+.photos .imageArea img {
+  object-fit: cover;
+  width: 100%;
+}
+
 
 
 @media (max-width: 768px) {
@@ -465,16 +512,9 @@ HEADER
     gap: clamp(5rem, 4vw, 2rem);
   }
 
-  .imageArea {
-    max-height: 300px;
-    margin-top: 20px;
+  .photos .buttonArea {
+    align-self: flex-start;
   }
-
-  .imageArea img {
-    height: 300px;
-    object-fit: contain;
-  }
-
 
   .strategy {
     display: flex;
@@ -485,6 +525,34 @@ HEADER
   .cardGrid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .photos {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    grid-template-columns: 1fr;
+  }
+
+  .photos .textArea {
+    text-align: center;
+  }
+
+  .photos .buttonArea {
+    align-self: center;
+    margin-bottom: 30px;
+  }
+
+  .photos p {
+    margin-left: 0px;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 450px) {
+  .cardGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 }
 
