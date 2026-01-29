@@ -11,6 +11,16 @@
   --text: #303030;
   --detail: #54926a;
   --secondary: #d9d9cc;
+
+  /* New Category Colors */
+  --photography-bg: #dce8e0;
+  --photography-accent: #54926a;
+  --events-bg:  #eceada;
+  --events-accent: #8a8574;
+  --videos-bg: #d6f4da;
+  --videos-accent: #3e974a;
+  --story-bg: #d8edce;
+  --story-accent: #5ead46;
 }
 
 /*
@@ -97,7 +107,6 @@ h3 {
 p {
   font-family: var(--ff-Noto);
   font-size: clamp(1.6rem, 2vw, 2rem);
-
 }
 
 .section {
@@ -113,10 +122,9 @@ body::-webkit-scrollbar-track {
 }
 
 span {
-  color: var(--primary);
+
   white-space: nowrap;
 }
-
 
 /*
 HEADER
@@ -128,7 +136,6 @@ HEADER
   flex-direction: column;
   gap: 15em;
 }
-
 
 .presentation {
   display: grid;
@@ -147,29 +154,23 @@ HEADER
   font-size: clamp(1.6rem, 2vw, 2rem);
   color: var(--text);
   margin-left: clamp(0.1rem, 0.5vw, 1rem);
-
   margin-top: 10px;
 }
 
 .presentation img {
-  /* Alinha a imagem na base do grid, junto com o botão */
   width: clamp(5rem, 30rem, 40rem);
-  /* Impede que o gráfico fique maior que o texto */
 }
-
 
 .textArea {
   display: flex;
   flex-direction: column;
   height: auto;
-  /* agora a altura é só do conteúdo */
   gap: 20px;
   text-align: left;
 }
 
 .textArea img {
   align-self: flex-start;
-
   width: clamp(8rem, 15vw, 10rem);
   height: auto;
 }
@@ -182,10 +183,8 @@ HEADER
 .buttonArea {
   display: flex;
   margin-top: auto;
-  /* espaçamento normal */
   justify-content: flex-start;
   background-color: var(--detail);
-  /* opcional */
   margin-top: 30px;
   justify-self: center;
   align-self: flex-start;
@@ -202,7 +201,6 @@ HEADER
   gap: 15px;
   height: 100%;
   box-shadow: 0px 2px 5px rgba(40, 40, 40, 0.393);
-  ;
   font-size: clamp(1.5rem, 2vw, 2rem);
   border-radius: clamp(5rem, 5vw, 5rem);
   transition: all 0.25s ease-in;
@@ -211,7 +209,6 @@ HEADER
 .buttonArea button:hover {
   background-color: var(--primary);
   box-shadow: 0px 3px 5px rgba(40, 40, 40, 0.616);
-  ;
 }
 
 .buttonArea ion-icon {
@@ -224,7 +221,6 @@ HEADER
 .services {
   padding: 4rem 2rem;
   display: flex;
-
   flex-direction: column;
 }
 
@@ -239,7 +235,6 @@ HEADER
   background-color: var(--secondary);
   display: flex;
   padding: 100px clamp(0rem, 4vw, 6rem);
-  ;
   justify-content: space-around;
 }
 
@@ -277,7 +272,6 @@ HEADER
   flex-direction: column;
   justify-content: center;
   height: auto;
-  /* agora a altura é só do conteúdo */
   gap: 10px;
   text-align: left;
   font-family: var(--ff-DMS);
@@ -321,7 +315,6 @@ HEADER
   color: #f2f2f2;
 }
 
-
 .stItem:hover ion-icon {
   color: #FFF;
   background-color: #81ae8d;
@@ -335,26 +328,29 @@ HEADER
   transition: all 0.2s ease-in;
 }
 
-
 .strategyDescription {
   margin-left: 10px;
   font-family: var(--ff-Noto);
   color: var(--text);
 }
 
+/* Services Wrapper - Container para as seções de serviços */
+.services-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
 
+/* MANAGE - Gestão de Tráfego Pago */
 .manage {
   width: 100%;
-  background-color: #e9e9e9;
-  padding-top: 100px;
-  padding-bottom: 100px;
-  display: flex;
-  padding-inline: 50px;
-  justify-content: space-around;
+  background-color: #f3f1f1;
+  padding: 100px clamp(2rem, 8vw, 6rem);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  min-height: 600px;
 }
 
 .manage .textArea {
@@ -362,11 +358,12 @@ HEADER
   margin-bottom: 50px;
 }
 
-
 .cardGrid {
   display: flex;
   gap: clamp(2rem, 5vw, 5rem);
   margin-bottom: 50px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .cdItem {
@@ -380,12 +377,13 @@ HEADER
   background-color: #f7f7f7;
   border-radius: clamp(2rem, 2vw, 4rem);
   transition: all 0.2s ease-in;
-
+  flex: 1;
+  min-width: 200px;
+  max-width: 250px;
 }
 
 .cdItem:hover {
   transform: scale(1.01);
-  /* Aumenta o elemento para 150% do seu tamanho original */
   box-shadow: 0px 0px 10px rgba(40, 40, 40, 0.34);
 }
 
@@ -412,7 +410,6 @@ HEADER
 }
 
 /* CDITEMS colors */
-
 .cdItem:nth-of-type(1) {
   border-color: hsla(221, 100%, 50%, 0.600);
 }
@@ -438,31 +435,33 @@ HEADER
 }
 
 .cdItem:nth-of-type(4) {
-  border-color: hsl(141, 100%, 50%, 0.600);
+  border-color: hsla(141, 100%, 50%, 0.6);
 }
 
 .cdItem:nth-of-type(4) ion-icon {
   background-color: hsl(141, 100%, 50%, 0.600);
 }
 
+/* PHOTOS - Fotografia Profissional */
 .photos {
   width: 100%;
-  background-color: var(--detail);
-  padding-top: 100px;
-  padding-bottom: 100px;
-  padding-inline: clamp(1rem, 12vw, 10rem);
-  justify-content: space-around;
+  background-color: var(--photography-bg);
+  padding: 100px clamp(2rem, 8vw, 6rem);
   display: grid;
   gap: 20px;
   grid-template-columns: 7fr 3fr;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  min-height: 600px;
+}
+
+.photos .textArea {
+  text-align: left;
 }
 
 .photos h1,
 .photos p {
-  color: #f2f2f2;
+  color: var(--text);
 }
 
 .photos p {
@@ -470,110 +469,570 @@ HEADER
   margin-left: 10px;
 }
 
+.photos h1 span {
+  color: var(--photography-accent);
+}
+
 .photos .buttonArea {
   align-self: flex-start;
-  background-color: var(--text);
+  background-color: var(--photography-accent);
 }
 
 .photos .buttonArea button:hover {
   background-color: #070707;
 }
 
-
 .photos .imageArea {
   border-radius: clamp(2rem, 1vw, 2rem);
   background-color: var(--background);
   overflow: hidden;
   box-shadow: 0px 0px 10px rgba(40, 40, 40, 0.74);
-
 }
 
 .photos .imageArea img {
-  object-fit: cover;
+  object-fit: contain;
   width: 100%;
 }
 
+/* EVENTS COVERAGE - Cobertura de Eventos */
+.events-coverage {
+  width: 100%;
+  background-color: var(--events-bg);
+  padding: 100px clamp(2rem, 8vw, 6rem);
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 3fr 7fr;
+  justify-content: center;
+  align-items: center;
+  min-height: 600px;
+}
+
+.events-coverage h1,
+.events-coverage p {
+  color: var(--text);
+}
+
+.events-coverage span {
+  color: var(--events-accent);
+}
+
+.events-coverage .buttonArea {
+  align-self: flex-start;
+  background-color: var(--events-accent);
+}
+
+.events-coverage .buttonArea button:hover {
+  background-color: #b8673f;
+}
+
+.events-coverage .imageArea {
+  border-radius: clamp(2rem, 1vw, 2rem);
+  background-color: #fff;
+  overflow: hidden;
+  box-shadow: 0px 0px 10px rgba(212, 132, 92, 0.4);
+}
+
+.events-coverage .imageArea img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.service-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.service-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: clamp(1.5rem, 2vw, 1.8rem);
+  color: var(--text);
+}
+
+.service-list ion-icon {
+  width: 24px;
+  height: 24px;
+  color: var(--events-accent);
+  flex-shrink: 0;
+}
+
+/* INSTITUTIONAL VIDEOS - Vídeos Institucionais */
+.institutional-videos {
+  width: 100%;
+  background-color: var(--videos-bg);
+  padding: 100px clamp(2rem, 8vw, 6rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 600px;
+}
+
+.institutional-videos h1,
+.institutional-videos p {
+  color: var(--text);
+}
+
+.institutional-videos span {
+  color: var(--videos-accent);
+}
+
+.institutional-videos .textArea {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.institutional-videos .cardGrid {
+  display: flex;
+  gap: clamp(2rem, 5vw, 5rem);
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.institutional-videos .cdItem {
+  background-color: rgba(255, 255, 255, 0.7);
+  border-bottom: 5px solid var(--videos-accent);
+}
+
+.institutional-videos .cdItem ion-icon {
+  background-color: var(--videos-accent);
+}
+
+.institutional-videos .buttonArea {
+  justify-self: center;
+  align-self: center;
+  background-color: var(--videos-accent);
+}
+
+.institutional-videos .buttonArea button:hover {
+  background-color: #6d4a94;
+}
+
+/* STORYMAKER */
+.storymaker {
+  width: 100%;
+  background-color: var(--story-bg);
+  padding: 100px clamp(2rem, 8vw, 6rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 600px;
+}
+
+.storymaker h1,
+.storymaker p {
+  color: var(--text);
+}
+
+.storymaker span {
+  color: var(--story-accent);
+}
+
+.storymaker .textArea {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: clamp(2rem, 5vw, 4rem);
+  margin-bottom: 50px;
+  width: 100%;
+  max-width: 900px;
+}
+
+.story-card {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: clamp(1.5rem, 2vw, 2.5rem);
+  text-align: center;
+  transition: all 0.3s ease-in;
+  box-shadow: 0px 4px 8px rgba(45, 155, 143, 0.15);
+}
+
+.story-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 16px rgba(45, 155, 143, 0.3);
+  background-color: #fff;
+}
+
+.story-card ion-icon {
+  width: 50px;
+  height: 50px;
+  color: var(--story-accent);
+  align-self: center;
+  font-size: 50px;
+}
+
+.story-card h3 {
+  font-size: clamp(1.5rem, 2vw, 1.8rem);
+  color: var(--text);
+  font-weight: 600;
+}
+
+.story-card p {
+  font-size: clamp(1.4rem, 1.5vw, 1.6rem);
+  color: #666;
+}
+
+.storymaker .buttonArea {
+  justify-self: center;
+  align-self: center;
+  background-color: var(--story-accent);
+}
+
+.storymaker .buttonArea button:hover {
+  background-color: #1f7a6f;
+}
+
+/* Brand Area */
+.brandArea {
+  text-align: center;
+  padding: 50px 0;
+}
+
+/* Carrossel Infinito */
+@keyframes scroll-right {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.carrousel-container {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 40px;
+  padding: 20px 0;
+}
+
+.carrousel {
+  display: flex;
+  gap: 40px;
+  animation: scroll-right 30s linear infinite;
+  will-change: transform;
+}
+
+.brandArea .title{
+  margin-bottom: 50px;
+  font-family: var(--ff-DMS);
+  font-size: clamp(2.5rem, 4vw, 4rem);
+}
+
+.carrousel .item {
+  flex-shrink: 0;
+  width: 150px;
+  height: 80px;
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: all 0.3s ease-in;
+}
+
+.carrousel .item:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.carrousel .item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 10px;
+}
 
 
-@media (max-width: 768px) {
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 40px 0;
+  border-top: 1px solid #ddd;
+}
 
+.linksArea {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 
-  .buttonArea {
-    align-self: center;
+.link {
+  cursor: pointer;
+  transition: color 0.2s ease-in;
+}
+
+.link:hover {
+  color: var(--detail);
+}
+
+.btnSocial {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 30px;
+  margin: 10px;
+  background-color: var(--detail);
+  color: white;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.2s ease-in;
+  font-size: clamp(1.4rem, 1.8vw, 1.8rem);
+}
+
+.btnSocial:hover {
+  background-color: var(--primary);
+  transform: scale(1.05);
+}
+
+.btnSocial ion-icon {
+  width: 24px;
+  height: 24px;
+  font-size: 24px;
+}
+
+/* Responsividade */
+@media (max-width: 1200px) {
+  @keyframes scroll-right {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
   }
 
-  .buttonArea button {
-    text-align: center;
+  .carrousel {
+    animation: scroll-right 25s linear infinite;
   }
 
+  .carrousel .item {
+    width: 130px;
+    height: 70px;
+  }
+}
+
+@media (max-width: 1024px) {
   .presentation {
-    display: flex;
-    /* MUITO IMPORTANTE */
-    gap: clamp(5rem, 4vw, 2rem);
-  }
-
-  .photos .buttonArea {
-    align-self: flex-start;
+    grid-template-columns: 1fr;
   }
 
   .strategy {
-    display: flex;
-    flex-direction: column;
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .cardGrid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
   }
 
   .photos {
-    display: flex;
-    align-items: center;
-    text-align: center;
     grid-template-columns: 1fr;
+    gap: 40px;
   }
 
   .photos .textArea {
     text-align: center;
   }
 
+  .photos p {
+    max-width: 100%;
+    margin-left: 0;
+  }
+
   .photos .buttonArea {
     align-self: center;
-    margin-bottom: 30px;
   }
 
-  .photos p {
-    margin-left: 0px;
-    max-width: 100%;
+  .photos .imageArea {
+    max-width: 450px;
+    margin: 0 auto;
+  }
+
+  .events-coverage {
+    grid-template-columns: 1fr;
+  }
+
+  .cardGrid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cdItem {
+    min-width: 100%;
+    max-width: 400px;
   }
 }
 
-@media (max-width: 450px) {
-  .cardGrid {
+@media (max-width: 768px) {
+  .container {
+    margin-top: 4em;
+    gap: 8em;
+  }
+
+  .section {
+    margin: 0px clamp(1rem, 5vw, 4rem);
+  }
+
+  .carrousel {
+    animation: scroll-right 20s linear infinite;
+    gap: 30px;
+  }
+
+  .carrousel .item {
+    width: 110px;
+    height: 60px;
+  }
+
+  .manage,
+  .photos,
+  .events-coverage,
+  .institutional-videos,
+  .storymaker {
+    padding: 60px clamp(1rem, 5vw, 4rem);
+    min-height: auto;
+  }
+
+  .photos .imageArea {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .data {
+    flex-direction: column;
+    gap: 30px;
+    padding: 50px clamp(1rem, 5vw, 4rem);
+  }
+
+  .articleGrid {
     grid-template-columns: 1fr;
+  }
+
+  .cardGrid {
+    flex-direction: column;
     gap: 20px;
   }
+
+  .cdItem {
+    min-width: 100%;
+    max-width: 100%;
+  }
+
+  .story-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-list {
+    align-items: flex-start;
+  }
+
+  .photos p,
+  .events-coverage p {
+    max-width: 100%;
+  }
+
+  .carrousel {
+    gap: 20px;
+  }
+
+  .carrousel .item {
+    width: 120px;
+    height: 60px;
+  }
 }
 
-/* 2. O Lenis recomenda essas classes para evitar bugs de renderização */
-html.lenis,
-html.lenis body {
-  height: auto;
-}
+@media (max-width: 480px) {
+  html {
+    font-size: 8px;
+  }
 
-.lenis.lenis-smooth {
-  scroll-behavior: auto !important;
-}
+  .container {
+    margin-top: 2em;
+    gap: 5em;
+  }
 
-.lenis.lenis-smooth [data-lenis-prevent] {
-  overscroll-behavior: contain;
-}
+  .section {
+    margin: 0px 1rem;
+  }
 
-.lenis.lenis-stopped {
-  overflow: hidden;
-}
+  .carrousel {
+    animation: scroll-right 15s linear infinite;
+    gap: 20px;
+  }
 
-.lenis.lenis-scrolling iframe {
-  pointer-events: none;
+  .carrousel .item {
+    width: 90px;
+    height: 50px;
+  }
+
+  .manage,
+  .photos,
+  .events-coverage,
+  .institutional-videos,
+  .storymaker {
+    padding: 40px 1rem;
+    min-height: auto;
+  }
+
+  .photos .imageArea {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .photos .textArea {
+    max-width: 100%;
+  }
+
+  .data {
+    padding: 30px 1rem;
+  }
+
+  .textArea h1 {
+    font-size: clamp(1.8rem, 3vw, 3rem);
+  }
+
+  .buttonArea {
+    width: 100%;
+  }
+
+  .buttonArea button {
+    padding: clamp(1.2rem, 1.5vw, 1.8rem) 20px;
+    font-size: clamp(1.2rem, 1.5vw, 1.6rem);
+  }
+
+  .cardGrid {
+    gap: 15px;
+  }
+
+  .story-card {
+    padding: 20px;
+  }
+
+  .carrousel {
+    gap: 10px;
+  }
+
+  .carrousel .item {
+    width: 100px;
+    height: 50px;
+  }
+
+  .linksArea {
+    gap: 15px;
+  }
+
+  .btnSocial {
+    padding: 12px 20px;
+    margin: 5px;
+    font-size: 1.4rem;
+  }
 }
