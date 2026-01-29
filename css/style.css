@@ -15,7 +15,7 @@
   /* New Category Colors */
   --photography-bg: #dce8e0;
   --photography-accent: #54926a;
-  --events-bg:  #eceada;
+  --events-bg: #eceada;
   --events-accent: #8a8574;
   --videos-bg: #d6f4da;
   --videos-accent: #3e974a;
@@ -88,6 +88,7 @@ body {
   background-color: var(--background);
   font-size: 1.6rem;
   line-height: 1.5;
+  overflow-x: hidden;
 }
 
 :focus-visible {
@@ -695,17 +696,18 @@ HEADER
   background-color: #1f7a6f;
 }
 
-/* Brand Area */
 .brandArea {
   text-align: center;
   padding: 50px 0;
+  width: 100%;
+  overflow: hidden;
 }
 
-/* Carrossel Infinito */
 @keyframes scroll-right {
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(-50%);
   }
@@ -715,20 +717,14 @@ HEADER
   width: 100%;
   overflow: hidden;
   margin-top: 40px;
-  padding: 20px 0;
 }
 
 .carrousel {
+  margin-top: 40px;
   display: flex;
   gap: 40px;
   animation: scroll-right 30s linear infinite;
   will-change: transform;
-}
-
-.brandArea .title{
-  margin-bottom: 50px;
-  font-family: var(--ff-DMS);
-  font-size: clamp(2.5rem, 4vw, 4rem);
 }
 
 .carrousel .item {
@@ -740,20 +736,12 @@ HEADER
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
-  transition: all 0.3s ease-in;
+  cursor: pointer;
+  transition: transform 0.2s ease-in;
 }
 
 .carrousel .item:hover {
   transform: scale(1.05);
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-.carrousel .item img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  padding: 10px;
 }
 
 
@@ -811,6 +799,7 @@ HEADER
     0% {
       transform: translateX(0);
     }
+
     100% {
       transform: translateX(-50%);
     }
